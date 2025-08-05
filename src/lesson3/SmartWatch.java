@@ -1,7 +1,26 @@
 package lesson3;
 
 public class SmartWatch extends SmartDevice{
-    public SmartWatch() {
+    SmartWatch(String brand, String model, boolean isOnline){
+        super(brand, model, isOnline);
     }
-    public SmartWatch() {}
+
+    @Override
+    protected String connectToWiFi(){
+        return super.connectToWiFi();
+    }
+
+    @Override
+    protected String disconnect(){
+        return super.disconnect();
+    }
+
+    public int trackHeartRate(int bpm){
+        return bpm / 60;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
