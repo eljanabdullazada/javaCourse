@@ -23,7 +23,6 @@ public class SmartDeviceController {
         System.out.println(sf1);
         System.out.println(sf2 + "\n");
 
-        // Connect to Wi-Fi
         System.out.println(sw1.connectToWiFi());
         System.out.println(ss1.connectToWiFi());
         System.out.println(sf2.connectToWiFi() + "\n");
