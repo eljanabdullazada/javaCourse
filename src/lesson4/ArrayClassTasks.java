@@ -29,13 +29,18 @@ public class ArrayClassTasks {
         }
         System.out.println();
 
+        // normal to string method of Arrays
+        System.out.println(Arrays.toString(arr));
+        // using stream method
+        Arrays.stream(arr).forEach(element -> System.out.print(element + " "));
+
+        System.out.println();
         // part 4
         int sum = 0;
         for(int i = 0; i<arr.length; i++){
             sum += arr[i];
         }
         System.out.println("Array elementlerinin cemi: " + sum);
-
 
         //part 5
         int min = arr[0];
