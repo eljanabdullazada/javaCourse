@@ -23,9 +23,11 @@ public class ArrayClassTasks {
         }
 
         // part 3
+        System.out.println("Array elementleri: ");
         for(int i = 0; i<arr.length; i++){
             System.out.println("Element " + (i + 1) + ": "+ arr[i]);
         }
+        System.out.println();
 
         // part 4
         int sum = 0;
@@ -51,9 +53,9 @@ public class ArrayClassTasks {
 
         System.out.println();
         //Stream version for sum, min, max, and average
-        System.out.println("Array elementlerinin ededi ortasi: " + Arrays.stream(arr).average());
-        System.out.println("Array elementlerinin minimumu: " + Arrays.stream(arr).min());
-        System.out.println("Array elementlerinin maximumu: " + Arrays.stream(arr).max());
+        System.out.println("Array elementlerinin ededi ortasi: " + Arrays.stream(arr).average().orElse(0));
+        System.out.println("Array elementlerinin minimumu: " + Arrays.stream(arr).min().orElse(0));
+        System.out.println("Array elementlerinin maximumu: " + Arrays.stream(arr).max().orElse(0));
         System.out.println("Array elementlerinin cemi: " + Arrays.stream(arr).sum());
 
     }
