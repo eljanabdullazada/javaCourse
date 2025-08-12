@@ -9,9 +9,11 @@ public class ArrayClassTask3 {
                 {7, 8, 9}
         };
 
+        // print a row in matrix
         for(int i = 0; i < matrix[1].length; i++){
             System.out.print(matrix[1][i] + " ");
         }
+
 
     }
 }
