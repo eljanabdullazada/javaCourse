@@ -14,6 +14,12 @@ public class ArrayClassTask3 {
             System.out.print(matrix[1][i] + " ");
         }
 
+        System.out.println();
+
+        // print a column in matrix
+        for(int i = 0; i < matrix.length; i++){
+            System.out.println(matrix[i][2] + " ");
+        }
 
     }
 }
