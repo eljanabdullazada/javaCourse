@@ -1,6 +1,8 @@
 package exceptionsPractise;
 import java.util.Scanner;
 
+import exceptionsPractise.CustomException;
+
 public class MentorLessonsExceptions {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
