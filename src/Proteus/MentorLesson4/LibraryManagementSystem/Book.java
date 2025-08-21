@@ -15,10 +15,6 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getAuthor() {
         return author;
     }
@@ -27,7 +23,7 @@ public class Book {
         this.author = author;
     }
 
-    public boolean isBorrowed() {
+    public boolean getIsBorrowed() {
         return isBorrowed;
     }
 
@@ -36,22 +32,22 @@ public class Book {
     }
 
     public String borrowBook(String title, String author) throws BookAlreadyBorrowedException{
-        if(!isBorrowed){
-            isBorrowed = true;
+        if(!getIsBorrowed()){
+
             return "Borrowed " + title + " by " + author;
         }
         throw new BookAlreadyBorrowedException("This book is already borrowed");
     }
 
     public String returnBook(String title, String author) throws BookNotBorrowedException{
-        if(isBorrowed){
-            isBorrowed = false;
-            return "Returned " + title + " by " + author;
+        if(getIsBorrowed()){
+            setBorrowed(false);
+            return "Returned " + getTitle() + " by " + getAuthor();
         }
         throw new BookNotBorrowedException("This book is already returned");
     }
 
     public String printInfo() {
-        return title  + " by " + author;
+        return getTitle()  + " by " + getAuthor();
     }
 }
