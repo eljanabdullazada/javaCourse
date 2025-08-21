@@ -10,6 +10,8 @@ public class TaskOne {
             if(input.length() < 6 ){
                 throw new InvalidPasswordException("The length of password should not be less than 6 characters");
             }
+
+
         } catch (InvalidPasswordException e){
             System.out.println(e.getMessage());
         }
