@@ -4,34 +4,51 @@ import java.util.ArrayList;
 
 public class Library {
     private String name;
-    private ArrayList books;
-    private Book book;
+    private ArrayList<Book> books;
+    public Library(String name){
+        this.name = name;
+        books = new ArrayList<>();
+    }
 
-    public String addBook(Book book){
+    public void addBook(Book book){
         books.add(book);
-        return "Book " + book.getTitle() + " by " + book.getAuthor() + " is added to the library";
+        System.out.println("Book " + book.getTitle() + " by " + book.getAuthor() + " is added to the library.");;
     }
 
     public void borrowBook(String title) throws BookAlreadyBorrowedException{
-        if(books.contains(title)){
-            book.borrowBook(title, book.getAuthor());
+        for(Book b: books){
+            if(b.getTitle().equals(title)){
+                if(!b.getIsBorrowed()){
+                    b.borrowBook();
+                    System.out.println("Borrowed " + b.getTitle() + " by " + b.getAuthor());
+                    return;
+                }
+            }
         }
+        throw new BookNotFoundException("Could not find book with this name to borrow.");
     }
 
     public void returnBook(String title) throws BookNotBorrowedException{
-        book.returnBook(title, book.getAuthor());
+        for(Book b: books){
+            if(b.getTitle().equals(title)){
+                if(b.getIsBorrowed()){
+                    b.returnBook();
+                    System.out.println("Returned " + b.getTitle() + " by " + b.getAuthor());
+                    return;
+                }
+            }
+        }
+        throw new BookNotFoundException("Could not find book with this name to return.");
     }
 
-    public String printAllBooks(){
-        return books.toString();
+    public void printAllBooks(){
+        System.out.println("Information about all the available books in library " + getName() + ": \n");
+        for (Book b: books){
+              b.printInfo();
+        }
     }
 
-
-    public ArrayList getBooks() {
-        return books;
-    }
-
-    public void setBooks(ArrayList books) {
-        this.books = books;
+    public String getName() {
+        return name;
     }
 }
