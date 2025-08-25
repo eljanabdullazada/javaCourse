@@ -46,8 +46,8 @@ public class StudentManagementSystem {
         }
     }
 
-    public static Student getStudentById(int id){
-
-    }
+//    public static Student getStudentById(int id){
+//
+//    }
 
 }
