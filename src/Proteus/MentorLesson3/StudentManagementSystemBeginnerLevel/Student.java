@@ -5,10 +5,11 @@ public class Student {
     private int id;
     private String name;
 
-    static int nextId;
+    static int nextId = 0;
 
     public Student(String name){
         this.name = name;
+        this.id = nextId++;
     }
 
     public String getName() {
@@ -25,6 +26,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "The student with ID " + id + " is named " + name + ".";
+        return "The student with ID " + getId() + " is named " + name + ".";
     }
 }
