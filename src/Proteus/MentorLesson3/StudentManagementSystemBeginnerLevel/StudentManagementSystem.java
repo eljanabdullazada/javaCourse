@@ -1,5 +1,6 @@
 package Proteus.MentorLesson3.StudentManagementSystemBeginnerLevel;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.List;
 
@@ -29,25 +30,35 @@ public class StudentManagementSystem {
                 System.out.println("Student with id " + id + " deleted successfully");
             }
             else{
-                throw new StudentNotFoundException("Student with this ID does not exist.");
+                throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
             }
         }
     }
 
     public static void updateStudent(int id, String name){
+        boolean studentFound = false;
         for(Student student: studentList){
             if(student.getId() == id){
                 System.out.println("Student name" + student.getName() + " with ID " + id + " is changed to -> " + name);
                 student.setName(name);
+                studentFound = true;
+                break;
             }
-            else{
-                throw new StudentNotFoundException("Student with this ID does not exist.");
-            }
+        }
+        if(!studentFound){
+            throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
         }
     }
 
-//    public static Student getStudentById(int id){
-//
-//    }
+    public static Student getStudentById(int id){
+
+        for(Student student: studentList){
+            if(student.getId() == id){
+                return student;
+            }
+        }
+
+        throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
+    }
 
 }
