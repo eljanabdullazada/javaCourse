@@ -48,6 +48,7 @@ public class StudentManagementSystem {
                 case 3:
                     System.out.println("Please enter student ID!");
                     int ID = scanner.nextInt();
+                    scanner.nextLine();
                     System.out.println("Please enter new student name!");
                     String newStudentName = scanner.nextLine();
                     updateStudent(ID, newStudentName);
@@ -89,7 +90,7 @@ public class StudentManagementSystem {
             }
         }
         if (!studentFound) {
-            throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
+            throw new StudentNotFoundException("Student with ID " + id + " does not exist.");
         }
     }
 
