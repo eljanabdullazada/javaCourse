@@ -26,6 +26,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "The student with ID " + getId() + " is named " + name + ".";
+        return "The student with ID " + getId() + " is " + name + ".";
     }
 }

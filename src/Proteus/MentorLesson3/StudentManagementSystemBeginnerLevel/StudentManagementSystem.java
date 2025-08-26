@@ -53,11 +53,16 @@ public class StudentManagementSystem {
                     String newStudentName = scanner.nextLine();
                     updateStudent(ID, newStudentName);
                     break;
+                case 4:
+                    System.out.println("Enter student ID.");
+                    int studentSearchID = scanner.nextInt();
+                    System.out.println(getStudentById(studentSearchID));
+                    break;
                 case 5:
                     showStudents();
                     break;
                 case 6:
-                    break;
+                    return;
                 default:
                     System.out.println("Please enter number of the operation you would like to execute");
             }
@@ -95,18 +100,8 @@ public class StudentManagementSystem {
     }
 
     public static void updateStudent(int id, String newName) {
-        boolean studentFound = false;
-        for (Student student : studentList) {
-            if (student.getId() == id) {
-                System.out.println("Student name" + student.getName() + " with ID " + id + " is changed to -> " + newName);
-                student.setName(newName);
-                studentFound = true;
-                break;
-            }
-        }
-        if (!studentFound) {
-            throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
-        }
+        getStudentById(id).setName(newName);
+        System.out.println("Student name with ID " + id + " is changed " + getStudentById(id) + " to " + newName + " successfully");
     }
 
     public static Student getStudentById(int id) {
