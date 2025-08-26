@@ -1,5 +1,6 @@
 package Proteus.MentorLesson3.StudentManagementSystemBeginnerLevel;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class StudentManagementSystem {
@@ -20,47 +21,84 @@ public class StudentManagementSystem {
             addStudent(student);
         }
 
-        /*
-        1. Add Student
-        2. Delete Student
-        3. Update Student
-        4. Find Student
-        5. Get All Students
-        6. Exit
-         */
-
-        System.out.println("Welcome to student management system console.");
-        System.out.println("For operations please select numbers from 1 to 6");
-    }
-
-    public static void addStudent(Student student) throws StudentNotFoundException {
-        studentList.add(student);
-        System.out.println(student);
-    }
-
-    static void showStudents() {
-        for (Student student : studentList) {
-            System.out.println(student);
-        }
-    }
-
-    public static void deleteStudent(int id) {
-        for (Student student : studentList) {
-            if (student.getId() == id) {
-                studentList.remove(student);
-                System.out.println("Student with id " + id + " deleted successfully");
-            } else {
-                throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
+        while(true){
+            System.out.println(
+                    """
+                            1. Add Student
+                            2. Delete Student
+                            3. Update Student
+                            4. Find Student
+                            5. Get All Students
+                            6. Exit"""
+            );
+            System.out.println("Choose an option:");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice){
+                case 1:
+                    System.out.println("Enter student name:");
+                    String name = scanner.nextLine();
+                    addStudent(new Student(name));
+                    break;
+                case 2:
+                    System.out.println("Enter student ID to delete");
+                    int deleteId = scanner.nextInt();
+                    deleteStudent(deleteId);
+                    break;
+                case 3:
+                    System.out.println("Please enter student ID!");
+                    int ID = scanner.nextInt();
+                    System.out.println("Please enter new student name!");
+                    String newStudentName = scanner.nextLine();
+                    updateStudent(ID, newStudentName);
+                    break;
+                case 5:
+                    showStudents();
+                    break;
+                case 6:
+                    break;
+                default:
+                    System.out.println("Please enter number of the operation you would like to execute");
             }
         }
     }
 
-    public static void updateStudent(int id, String name) {
+    public static void addStudent(Student student) throws StudentNotFoundException {
+        studentList.add(student);
+        System.out.println("Student added: " + student);
+    }
+
+    static void showStudents() {
+        if(studentList.isEmpty()){
+            System.out.println("No students in the system");
+        } else{
+            for (Student student : studentList) {
+                System.out.println(student);
+            }
+        }
+    }
+
+    public static void deleteStudent(int id) {
         boolean studentFound = false;
         for (Student student : studentList) {
             if (student.getId() == id) {
-                System.out.println("Student name" + student.getName() + " with ID " + id + " is changed to -> " + name);
-                student.setName(name);
+                studentList.remove(student);
+                System.out.println("Student with id " + id + " deleted successfully");
+                studentFound = true;
+                break;
+            }
+        }
+        if (!studentFound) {
+            throw new StudentNotFoundException("Student with ID" + id + " does not exist.");
+        }
+    }
+
+    public static void updateStudent(int id, String newName) {
+        boolean studentFound = false;
+        for (Student student : studentList) {
+            if (student.getId() == id) {
+                System.out.println("Student name" + student.getName() + " with ID " + id + " is changed to -> " + newName);
+                student.setName(newName);
                 studentFound = true;
                 break;
             }
