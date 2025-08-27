@@ -5,11 +5,12 @@ public class Course {
     private String name;
     private String instructor;
 
-    private static int nextId;
+    private static int nextId = 0;
 
     public Course(String name, String instructor) {
         this.name = name;
         this.instructor = instructor;
+        id = nextId++;
     }
 
     public String getInstructor() {
