@@ -22,49 +22,58 @@ public class StudentManagementSystem {
         }
 
         while(true){
-            System.out.println(
-                    """
-                            1. Add Student
-                            2. Delete Student
-                            3. Update Student
-                            4. Find Student
-                            5. Get All Students
-                            6. Exit"""
-            );
-            System.out.println("Choose an option:");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-            switch (choice){
-                case 1:
-                    System.out.println("Enter student name:");
-                    String name = scanner.nextLine();
-                    addStudent(new Student(name));
-                    break;
-                case 2:
-                    System.out.println("Enter student ID to delete");
-                    int deleteId = scanner.nextInt();
-                    deleteStudent(deleteId);
-                    break;
-                case 3:
-                    System.out.println("Please enter student ID!");
-                    int ID = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("Please enter new student name!");
-                    String newStudentName = scanner.nextLine();
-                    updateStudent(ID, newStudentName);
-                    break;
-                case 4:
-                    System.out.println("Enter student ID.");
-                    int studentSearchID = scanner.nextInt();
-                    System.out.println(getStudentById(studentSearchID));
-                    break;
-                case 5:
-                    showStudents();
-                    break;
-                case 6:
-                    return;
-                default:
-                    System.out.println("Please enter number of the operation you would like to execute");
+            try{
+                System.out.println(
+                        """
+                                1. Add Student
+                                2. Delete Student
+                                3. Update Student
+                                4. Find Student
+                                5. Get All Students
+                                6. Exit"""
+                );
+                System.out.println("Choose an option:");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                switch (choice){
+                    case 1:
+                        System.out.println("Enter student name:");
+                        String name = scanner.nextLine();
+                        addStudent(new Student(name));
+                        break;
+                    case 2:
+                        System.out.println("Enter student ID to delete");
+                        int deleteId = scanner.nextInt();
+                        deleteStudent(deleteId);
+                        break;
+                    case 3:
+                        System.out.println("Please enter student ID!");
+                        int ID = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Please enter new student name!");
+                        String newStudentName = scanner.nextLine();
+                        updateStudent(ID, newStudentName);
+                        break;
+                    case 4:
+                        System.out.println("Enter student ID.");
+                        int studentSearchID = scanner.nextInt();
+                        System.out.println(getStudentById(studentSearchID));
+                        break;
+                    case 5:
+                        showStudents();
+                        break;
+                    case 6:
+                        return;
+                    default:
+                        System.out.println("Please enter number of the operation you would like to execute.");
+                }
+            } catch (StudentNotFoundException e){
+                System.out.println("Error: " + e.getMessage());
+            } catch(InputMismatchException e){
+                System.out.println("Error: " + e.getMessage());
+                scanner.nextLine();
+            } catch (Exception e){
+                System.out.println("An unexpected error occurred: " + e.getMessage());
             }
         }
     }
