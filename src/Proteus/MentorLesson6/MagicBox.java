@@ -7,8 +7,7 @@ public class MagicBox<T> {
         this.item = item;
     }
 
-    public T retreive(){
+    public T retrieve(){
         return item;
     }
-
 }
