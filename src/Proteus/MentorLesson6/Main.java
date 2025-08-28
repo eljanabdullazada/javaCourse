@@ -22,9 +22,6 @@ public class Main {
         NumberTool<Integer> intTool = new NumberTool<>();
         NumberTool<Double> doubleTool = new NumberTool<Double>();
 
-        intTool.cube(3);
-        doubleTool.cube(3.3);
-
         System.out.println(intTool.cube(3));
         System.out.println(doubleTool.cube(3.3));
 
