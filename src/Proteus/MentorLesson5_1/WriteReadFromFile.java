@@ -1,4 +1,4 @@
-package Proteus.MentorLesson5;
+package Proteus.MentorLesson5_1;
 
 import java.io.BufferedWriter;
 import java.io.BufferedReader;

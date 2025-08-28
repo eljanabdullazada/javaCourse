@@ -1,4 +1,4 @@
-package Proteus.MentorLesson5;
+package Proteus.MentorLesson5_1;
 
 public class Practise {
     public static void main(String[] args) {
