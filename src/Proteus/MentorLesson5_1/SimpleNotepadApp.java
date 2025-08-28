@@ -32,5 +32,15 @@ public class SimpleNotepadApp {
         } catch (IOException e) {
             System.out.println("Error occured: " + e.getMessage());
         }
+
+        try(BufferedReader reader = new BufferedReader(new FileReader("src/Proteus/MentorLesson5_1/notes.txt"))){
+            String line;
+            System.out.println("---All notes---");
+            while((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+        } catch (IOException e){
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }
