@@ -1,0 +1,14 @@
+package Proteus.MentorLesson6;
+
+public class MagicBox<T> {
+    private T item;
+
+    public void store(T item) {
+        this.item = item;
+    }
+
+    public T retreive(){
+        return item;
+    }
+
+}
