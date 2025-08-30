@@ -13,7 +13,7 @@ public class PasswordLengthChecker {
                 throw new InvalidPasswordException("The password must not be less than 6 characters.");
             }
             System.out.println("Password is correct.");
-        } catch(RuntimeException e){
+        } catch(InvalidPasswordException e){
             System.out.println("Error: " + e.getMessage());
         }
     }
