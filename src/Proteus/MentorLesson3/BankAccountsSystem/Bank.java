@@ -26,7 +26,7 @@ public class Bank {
             }
         }
         if(!hasAccounts){
-            throw new BankException("No accounts in this slot.");
+            throw new BankException("No accounts exist.");
         }
     }
 
