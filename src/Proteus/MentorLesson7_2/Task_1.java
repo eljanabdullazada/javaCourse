@@ -13,8 +13,8 @@ public class Task_1 {
 
         System.out.println(goods.get(0));
         System.out.println(goods.get(goods.size() - 1));
-        System.out.println("Extra line added");
-
+        System.out.println("Extra line added.");
+        System.out.println();
         System.out.println(goods.remove(2));
 
         for (String product: goods){
