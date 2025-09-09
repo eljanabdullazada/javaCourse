@@ -11,6 +11,7 @@ public class Task_1 {
         goods.add("cherry");
         goods.add("plum");
 
+        // print info
         System.out.println(goods.get(0));
         System.out.println(goods.get(goods.size() - 1));
         System.out.println("Extra line added.");
