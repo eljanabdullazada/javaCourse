@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Task_1 {
     public static void main(String[] args) {
-        //Practise HashMap
+        //Practise HashMap here
         HashMap<String, Integer> products = new HashMap<>();
 
         products.put("Car", 50000);
