@@ -7,7 +7,7 @@ public class PalindromeTester {
         String input = scanner.nextLine();
         StringBuilder sb = new StringBuilder(input);
 
-        if(input.equals(sb.reverse().toString())){
+        if(input.contentEquals(sb.reverse())){
             System.out.println("It is a Palindrome.");
         } else{
             System.out.println("It is not a Palindrome.");
