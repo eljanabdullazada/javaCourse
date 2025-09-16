@@ -8,14 +8,6 @@ public class FileHandler implements AutoCloseable{
         System.out.println("Resource for " + fileName + " is allocated.");
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     @Override
     public void close(){
         System.out.println("Warning: file " + fileName + " is being closed. (close is executed.)");
