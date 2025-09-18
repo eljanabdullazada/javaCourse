@@ -1,4 +1,4 @@
-package Proteus.MentorLesson_11_2.Task_1;
+package Proteus.MentorLesson11_2.Task_1;
 
 public class SystemManager {
     public static void main(String[] args) throws InterruptedException{

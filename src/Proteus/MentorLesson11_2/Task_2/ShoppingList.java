@@ -1,4 +1,4 @@
-package Proteus.MentorLesson_11_2.Task_2;
+package Proteus.MentorLesson11_2.Task_2;
 
 public class ShoppingList {
     public static void main(String[] args) {

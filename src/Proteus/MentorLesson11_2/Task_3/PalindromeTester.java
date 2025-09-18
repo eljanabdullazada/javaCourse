@@ -1,4 +1,4 @@
-package Proteus.MentorLesson_11_2.Task_3;
+package Proteus.MentorLesson11_2.Task_3;
 
 import java.util.Scanner;
 public class PalindromeTester {
