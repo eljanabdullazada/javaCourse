@@ -10,7 +10,6 @@ public class CounterRaceMain {
         t1.start();
         t2.start();
 
-
         //this (t3 and t4) works with lambda expressions
         Thread t3 = new Thread( () -> {
             for(int i = 0; i <= 10; i++){
