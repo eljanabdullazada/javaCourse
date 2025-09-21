@@ -1,4 +1,4 @@
-package Proteus.MentorLesson12_1.HomeTask;
+package Proteus.MentorLesson12_1.HomeTask.Task1;
 
 public class RunnerA implements Runnable{
 
